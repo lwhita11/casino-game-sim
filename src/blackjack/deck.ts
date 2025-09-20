@@ -1,9 +1,11 @@
-export type Card = { suit: string; rank: string };
+export type Rank = {label: string; value: number};
+
+export type Card = { suit: string; rank: Rank };
 
 export class Deck{
 
     private suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
-    private ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    private ranks = [{label: "2", value: 2}, {label: "3", value: 3}, {label: "4", value: 4}, {label: "5", value: 5}, {label: "6", value: 6}, {label: "7", value: 7}, {label: "8", value: 8}, {label: "9", value: 9}, {label: "10", value: 10}, {label: "J", value: 10}, {label: "Q", value: 10}, {label: "K", value: 10}, {label: "A", value: 11},];
     private deck: Card[] = [];
 
     constructor() {
