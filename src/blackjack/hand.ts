@@ -32,4 +32,12 @@ export class Hand {
             this.stay = true;
         }
     }
+    
+    public toString() {
+        let retString = "";
+        for (const card of this.cards) {
+            retString = retString + card.rank.label + card.suit + ", ";
+        }
+        return retString;
+    }
 }

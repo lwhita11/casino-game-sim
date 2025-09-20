@@ -3,10 +3,10 @@ import type { Card } from "./deck.js";
 import { Hand } from "./hand.js";
 
 
-class Blackjack {
-    private deck = new Deck;
+export class Blackjack {
+    private deck = new Deck();
     private wager = 0;
-    private playerHands: Hand[] = [new Hand];
+    private playerHands: Hand[] = [new Hand()];
     private dealerHand: Hand = new Hand;
 
     constructor() {
@@ -14,6 +14,7 @@ class Blackjack {
         this.playerHands[0]!.addCard(this.deck.dealCard());
         this.dealerHand.addCard(this.deck.dealCard());
         this.dealerHand.addCard(this.deck.dealCard());
+        console.log('player hand 1: ', this.playerHands[0]!.toString())
     }
 
     public getPlayerHands(): Hand[] {

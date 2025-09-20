@@ -1,5 +1,6 @@
 import promptSync from "prompt-sync";
 import { game } from "./games.js";
+import { Blackjack } from "./blackjack/blackjack.js";
 const prompt = promptSync();
 
 
@@ -14,6 +15,7 @@ while (true) {
     }
     else if (response.toLowerCase() == "blackjack") {
         currGame = game.Blackjack;
+        playBlackJack();
         
         break;
     }
@@ -26,7 +28,15 @@ while (true) {
     }
 }
 
-
-
-
-
+function playBlackJack() {
+    const blackJackGame = new Blackjack;
+    console.log('Welcome to Blackjack');
+    const hands = blackJackGame.getPlayerHands();
+    console.log('Player Hands:')
+    for (const hand of hands) {
+        console.log(hand.toString());
+    }
+    console.log('Dealer Hand:');
+    console.log(blackJackGame.getDealerHand().toString());
+    return;
+}
