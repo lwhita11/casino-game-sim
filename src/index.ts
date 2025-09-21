@@ -5,8 +5,9 @@ const prompt = promptSync();
 
 
 console.log('Casino Simulator');
-let response = ""
-let currGame = game.Blackjack
+let response = "";
+let currGame = game.Blackjack;
+let bankroll = prompt("Enter starting bankroll");
 while (true) {
     response = prompt("Which game would you like to test? ");
     if (response.toLowerCase() == "roulette") {
@@ -28,9 +29,10 @@ while (true) {
     }
 }
 
-function playBlackJack() {
-    const blackJackGame = new Blackjack;
+function playBlackJack(): number {
     console.log('Welcome to Blackjack');
+    const wager = parseInt(prompt("Enter wager amount: "));
+    const blackJackGame = new Blackjack(wager);
     const hands = blackJackGame.getPlayerHands();
     console.log('Player Hands:')
     for (const hand of hands) {
@@ -38,5 +40,5 @@ function playBlackJack() {
     }
     console.log('Dealer Hand:');
     console.log(blackJackGame.getDealerHand().toString());
-    return;
+    return 0;
 }

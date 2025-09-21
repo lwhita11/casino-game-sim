@@ -9,7 +9,8 @@ export class Blackjack {
     private playerHands: Hand[] = [new Hand()];
     private dealerHand: Hand = new Hand;
 
-    constructor() {
+    constructor(wager: number) {
+        this.wager = wager;
         this.playerHands[0]!.addCard(this.deck.dealCard());
         this.playerHands[0]!.addCard(this.deck.dealCard());
         this.dealerHand.addCard(this.deck.dealCard());
@@ -34,6 +35,18 @@ export class Blackjack {
     }
 
     public hit(): void {
+        //TODO
+    }
 
+    public stand(): void {
+        //TODO
+    }
+
+    public double(): void {
+        //TODO
+    }
+
+    public split(): void {
+        //TODO
     }
 }
