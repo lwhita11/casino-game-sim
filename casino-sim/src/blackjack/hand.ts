@@ -40,4 +40,9 @@ export class Hand {
         }
         return retString;
     }
+
+    public dealerToString() {
+        const topCard = this.cards[0];
+        return topCard.rank.label + topCard.suit;
+    }
 }

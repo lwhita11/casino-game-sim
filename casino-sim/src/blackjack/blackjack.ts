@@ -5,7 +5,8 @@ import { Hand } from "./hand.js";
 
 export class Blackjack {
     private deck = new Deck();
-    private wager = 0;
+    private dealerScore = 0;
+    private wager;
     private playerHands: Hand[] = [new Hand()];
     private dealerHand: Hand = new Hand;
 
@@ -15,7 +16,6 @@ export class Blackjack {
         this.playerHands[0]!.addCard(this.deck.dealCard());
         this.dealerHand.addCard(this.deck.dealCard());
         this.dealerHand.addCard(this.deck.dealCard());
-        console.log('player hand 1: ', this.playerHands[0]!.toString())
     }
 
     public getPlayerHands(): Hand[] {
@@ -47,6 +47,10 @@ export class Blackjack {
     }
 
     public split(): void {
+        //TODO
+    }
+
+    private dealerRun(): void {
         //TODO
     }
 }
